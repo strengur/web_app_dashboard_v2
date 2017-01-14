@@ -17,7 +17,9 @@
 
         <div class="user-login">
           <div class="alert login-flex-item">
-            <img src="icons/icon-bell.svg" alt="">
+            <div class="bell">
+              <img src="icons/icon-bell.svg" alt="">
+            </div>
             <div class="new-alert"></div>
           </div>
 
@@ -45,12 +47,27 @@
     </div>
 
     <div id="wrapper">
+      <div class="tabs">
+        <ul>
+          <li>Dashboard</li>
+        </ul>
+      </div>
+
+      <div class="search-bar">
+        <div class="search-field-area">
+          <form>
+            <input type="text" name="search-field" placeholder="Search...">
+            <button><img src="icons/icon-bell.svg" alt=""></button>
+          </form>
+        </div>
+      </div>
+
       <div class="alert-bar">
         <div class="alert-bar-message">
           <p><span>Alert</span>Nulham quis risus eget</p>
         </div>
         <div id="alert-bar-close" class="alert-bar-close">
-          <p>X</p>
+          <p>x</p>
         </div>
       </div>
     </div>

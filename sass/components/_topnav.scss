@@ -33,6 +33,10 @@
   margin-right: 12px;
 }
 
+.bell img {
+  margin-right: 0;
+}
+
 .login-flex-item {
   align-self: center;
 }
@@ -46,18 +50,22 @@
 }
 
 .alert img {
-  border-right: 1px solid $darkerPurple;
   padding: 0px 10px 0px;
 }
 
 .new-alert {
   position: absolute;
   top: 0px;
-  right: 20px;
+  right: 8px;
   height: 6px;
   width: 6px;
   border-radius: 50%;
   background: $alertGreen;
+}
+
+.profile {
+  border-left: 1px solid;
+  padding-left: 10px;
 }
 
 .profile img {

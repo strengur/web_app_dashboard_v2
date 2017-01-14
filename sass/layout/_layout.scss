@@ -1,24 +1,67 @@
 #wrapper {
-  position: relative;
+  position: absolute;
+  top: 70px;
+  height: calc(100vh - 70px);
+  width: calc(100vw - 70px);
+  right: 0;
 }
 
-.wrapper {
-  height: calc(100vh - 0px);
+.search-bar {
+  height: 44px;
+  background: #f1f1f1;
+  border-bottom: 1px solid $lightGray;
+}
+
+.search-field-area {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+}
+
+.search-field-area input {
+  padding: 4px;
+  @include bdr-three;
+  border: 1px solid $lightGray;
+  font-weight: 100;
+}
+
+.search-field-area button {
+  position: absolute;
+  background: transparent;
+  border:  0;
+  right: 15px;
+  top: 0;
+}
+
+.tabs {
+  position: absolute;
+  background: #fff;
+}
+
+.tabs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tabs li {
+  padding: 13px;
+  color: #353535;
+  border-right: 1px solid $lightGray;
 }
 
 .alert-bar {
-  position: absolute;
-  top: 160px;
-  left: 80px;
-  width: 80%;
+  position: relative;
+  top: 100px;
+  width: 85vw;
   background: $lighterPurple;
-  border-radius: 5px;
-  margin: auto;
-  box-shadow: 2px 2px 4px #555;
+  @include bdr-three;
+  margin: 0 auto;
+  @include b-shadow;
 }
 
-.alert-bar p {
-  margin: 9px 0 7px;
+.alert-bar-message p {
+  padding: 9px 0 7px;
   @include smallerFonts;
 }
 
@@ -30,5 +73,9 @@
 .alert-bar-close {
   position: absolute;
   right: 20px;
-  top: 0px;
+  top: 7px;
+}
+
+.alert-bar-close p {
+  margin: 0;
 }

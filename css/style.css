@@ -1,30 +1,64 @@
 * {
   box-sizing: border-box; }
 
-body {
-  background: #f1f1f1; }
-
 p {
   color: #fff; }
 
 #wrapper {
-  position: relative; }
+  position: absolute;
+  top: 70px;
+  height: calc(100vh - 70px);
+  width: calc(100vw - 70px);
+  right: 0; }
 
-.wrapper {
-  height: calc(100vh - 0px); }
+.search-bar {
+  height: 44px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #d0d0d0; }
+
+.search-field-area {
+  position: absolute;
+  top: 8px;
+  right: 15px; }
+
+.search-field-area input {
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid #d0d0d0;
+  font-weight: 100; }
+
+.search-field-area button {
+  position: absolute;
+  background: transparent;
+  border: 0;
+  right: 15px;
+  top: 0; }
+
+.tabs {
+  position: absolute;
+  background: #fff; }
+
+.tabs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.tabs li {
+  padding: 13px;
+  color: #353535;
+  border-right: 1px solid #d0d0d0; }
 
 .alert-bar {
-  position: absolute;
-  top: 160px;
-  left: 80px;
-  width: 80%;
+  position: relative;
+  top: 100px;
+  width: 85vw;
   background: #7477BF;
-  border-radius: 5px;
-  margin: auto;
+  border-radius: 3px;
+  margin: 0 auto;
   box-shadow: 2px 2px 4px #555; }
 
-.alert-bar p {
-  margin: 9px 0 7px;
+.alert-bar-message p {
+  padding: 9px 0 7px;
   font-size: 0.85em;
   font-weight: 100; }
 
@@ -35,7 +69,10 @@ p {
 .alert-bar-close {
   position: absolute;
   right: 20px;
-  top: 0px; }
+  top: 7px; }
+
+.alert-bar-close p {
+  margin: 0; }
 
 #topnav {
   position: absolute;
@@ -67,6 +104,9 @@ p {
   width: auto;
   margin-right: 12px; }
 
+.bell img {
+  margin-right: 0; }
+
 .login-flex-item {
   align-self: center; }
 
@@ -78,17 +118,20 @@ p {
   position: relative; }
 
 .alert img {
-  border-right: 1px solid #4D4C72;
   padding: 0px 10px 0px; }
 
 .new-alert {
   position: absolute;
   top: 0px;
-  right: 20px;
+  right: 8px;
   height: 6px;
   width: 6px;
   border-radius: 50%;
   background: #85DB81; }
+
+.profile {
+  border-left: 1px solid;
+  padding-left: 10px; }
 
 .profile img {
   border-radius: 50%;
@@ -101,13 +144,13 @@ p {
   left: 0;
   height: 100%;
   width: 70px;
-  background: #4D4C72;
+  background: #4D4F7F;
   z-index: 1; }
 
 .sidebar-content {
   position: relative;
   text-align: center;
-  top: 90px; }
+  top: 73px; }
 
 .sidebar-content img {
   position: relative;
