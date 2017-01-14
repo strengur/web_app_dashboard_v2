@@ -1,8 +1,27 @@
 body {
   background: #f1f1f1; }
 
+p {
+  color: #fff; }
+
+#wrapper {
+  position: relative; }
+
 .wrapper {
   height: calc(100vh - 0px); }
+
+.alert-bar {
+  position: absolute;
+  top: 140px;
+  left: 80px;
+  width: 80%;
+  background: #7477BF;
+  border-radius: 5px;
+  margin: auto; }
+
+.alert-bar span {
+  font-weight: bold;
+  margin: 0 10px 0 20px; }
 
 #topnav {
   position: absolute;
