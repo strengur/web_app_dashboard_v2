@@ -11,19 +11,20 @@
 .logo,
 .user-login {
   position: absolute;
-  top: 12px;
   color: #fff;
 }
 
 .logo {
   left: 15px;
   height: 40px;
+  top: 12px;
 }
 
 .user-login {
   display: inline-flex;
   justify-content: center;
   right: 15px;
+  top: 16px;
 }
 
 .user-login img {
@@ -36,18 +37,22 @@
   align-self: center;
 }
 
+.login-flex-item p {
+  @include smallerFonts;
+}
+
 .alert {
   position: relative;
 }
 
 .alert img {
   border-right: 1px solid $darkerPurple;
-  padding: 7px 10px 7px;
+  padding: 0px 10px 0px;
 }
 
 .new-alert {
   position: absolute;
-  top: 6px;
+  top: 0px;
   right: 20px;
   height: 6px;
   width: 6px;

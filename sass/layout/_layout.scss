@@ -8,16 +8,27 @@
 
 .alert-bar {
   position: absolute;
-  top: 140px;
+  top: 160px;
   left: 80px;
   width: 80%;
   background: $lighterPurple;
   border-radius: 5px;
   margin: auto;
+  box-shadow: 2px 2px 4px #555;
+}
 
+.alert-bar p {
+  margin: 9px 0 7px;
+  @include smallerFonts;
 }
 
 .alert-bar span {
   font-weight: bold;
   margin: 0 10px 0 20px;
+}
+
+.alert-bar-close {
+  position: absolute;
+  right: 20px;
+  top: 0px;
 }
