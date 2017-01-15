@@ -14,10 +14,19 @@
   top: 73px;
 }
 
-.sidebar-content img {
+.sidebar-content svg {
   position: relative;
   top: 2px;
   width: 25px;
+}
+
+.st0 {
+  fill: $lightGray !important;
+}
+
+.st0:active,
+.st0:hover {
+  fill: #fff !important;
 }
 
 .sidebar-content ul {
@@ -26,14 +35,14 @@
 }
 
 .sidebar-content li {
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  padding: 10px 0;
 }
 
-.sidebar-content li:hover,
-.sidebar-content li:visited {
-  border-left: 3px #85DB9D;
-  border-right: 3px transparent;
-  border-top: 3px transparent;
-  border-bottom: 3px transparent;
-  border-style: ridge;
+.sidebar-content li:first-of-type {
+  border-left: 3px ridge #85DB9D;
+  // border-right: 3px transparent;
+  // border-top: 3px transparent;
+  // border-bottom: 3px transparent;
+  // border-style: ridge;
 }

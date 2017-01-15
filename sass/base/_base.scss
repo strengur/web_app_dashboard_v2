@@ -9,3 +9,12 @@ body {
 p {
   color: #fff;
 }
+
+// Transition, in and out.
+.st0:hover {
+  transition: 0.7s;
+}
+
+.st0 {
+  transition: 0.5s;
+}
