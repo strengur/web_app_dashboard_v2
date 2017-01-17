@@ -81,6 +81,10 @@
   margin: 0;
 }
 
+.alert-bar-close p:hover {
+  cursor: pointer;
+}
+
 @include mobile-landscape {
   #wrapper {
     top: 70px;
