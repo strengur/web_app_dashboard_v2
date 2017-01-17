@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left:  0;
-  height: 70px;
+  height: 60px;
   width: 100%;
   background: $lighterPurple;
   z-index: 2;
@@ -17,20 +17,24 @@
 .logo {
   left: 15px;
   height: 40px;
-  top: 12px;
+  top: 9px;
 }
 
 .user-login {
   display: inline-flex;
   justify-content: center;
   right: 15px;
-  top: 16px;
+  top: 11px;
 }
 
 .user-login img {
-  height: 26px;
+  height: 20px;
   width: auto;
   margin-right: 12px;
+}
+
+.user-name {
+  display: none;
 }
 
 .bell img {
@@ -47,10 +51,11 @@
 
 .alert {
   position: relative;
+  top: 2px;
 }
 
 .alert img {
-  padding: 0px 10px 0px;
+  padding: 0px 12px 0px;
 }
 
 .new-alert {
@@ -70,6 +75,37 @@
 
 .profile img {
   border-radius: 50%;
-  height: 40px;
+  height: 30px;
   width: auto;
+}
+
+@include mobile-landscape {
+  #topnav {
+    height: 70px;
+  }
+
+  .logo {
+    top: 12px;
+  }
+
+  .user-login {
+    right: 15px;
+    top: 16px;
+  }
+
+  .user-login img {
+    height: 26px;
+  }
+
+  .alert {
+    top: 0;
+  }
+
+  .alert img {
+    padding: 0px 10px 0px;
+  }
+
+  .profile img {
+    height: 40px;
+  }
 }

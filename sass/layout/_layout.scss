@@ -1,28 +1,28 @@
 #wrapper {
   position: absolute;
-  top: 70px;
+  top: 100px;
+  width: 100%;
   height: calc(100vh - 70px);
-  width: calc(100vw - 70px);
-  right: 0;
 }
 
 .search-bar {
-  height: 44px;
+  height: 29px;
   background: #f1f1f1;
   border-bottom: 1px solid $lightGray;
 }
 
 .search-field-area {
   position: absolute;
-  top: 8px;
-  right: 15px;
+  top: 4px;
+  right: 4px;
 }
 
 .search-field-area input {
-  padding: 4px;
+  padding: 2px;
   @include bdr-three;
   border: 1px solid $lightGray;
   font-weight: 100;
+  font-size: 0.75em;
 }
 
 .search-field-area button {
@@ -45,14 +45,15 @@
 }
 
 .tabs li {
-  padding: 13px;
+  padding: 8px;
+  font-size: 0.75em;
   color: #353535;
   border-right: 1px solid $lightGray;
 }
 
 .alert-bar {
   position: relative;
-  top: 100px;
+  top: 20px;
   width: 85vw;
   background: $lighterPurple;
   @include bdr-three;
@@ -78,4 +79,36 @@
 
 .alert-bar-close p {
   margin: 0;
+}
+
+@include mobile-landscape {
+  #wrapper {
+    top: 70px;
+    width: calc(100vw - 70px);
+    right: 0;
+  }
+
+  .search-bar {
+    height: 44px;
+  }
+
+  .search-field-area {
+    top: 8px;
+    right: 15px;
+  }
+
+  .search-field-area input {
+    padding: 4px;
+    font-weight: 100;
+    font-size: 1em;
+  }
+
+  .tabs li {
+    padding: 13px;
+    font-size: 1em;
+  }
+
+  .alert-bar {
+    top: 100px;
+  }
 }
