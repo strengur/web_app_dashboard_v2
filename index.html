@@ -122,8 +122,25 @@
         </div>
       </div>
 
-      <canvas id="web-traffic"></canvas>
-      <canvas id="yourChart" width="400" height="400"></canvas>
+      <div class="network-data">
+        <table border="0">
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <canvas id="web-traffic" class="data-item"></canvas>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <canvas id="daily-traffic" class="data-item"></canvas>
+              </td>
+              <td>
+                <canvas id="mobile-users" class="data-item"></canvas>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <div class="alert-bar">
         <div class="alert-bar-message">

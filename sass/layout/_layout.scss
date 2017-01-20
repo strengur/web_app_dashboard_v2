@@ -85,6 +85,14 @@
   cursor: pointer;
 }
 
+.network-data table {
+  width: 100%;
+}
+
+.network-data canvas {
+  width: 100%;
+}
+
 @include mobile-landscape {
   #wrapper {
     top: 70px;

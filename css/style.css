@@ -87,6 +87,12 @@ p {
 .alert-bar-close p:hover {
   cursor: pointer; }
 
+.network-data table {
+  width: 100%; }
+
+.network-data canvas {
+  width: 100%; }
+
 @media screen and (min-width: 640px) {
   #wrapper {
     top: 70px;
