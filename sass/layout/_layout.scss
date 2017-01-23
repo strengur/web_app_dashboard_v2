@@ -85,12 +85,26 @@
   cursor: pointer;
 }
 
-.network-data table {
-  width: 100%;
+.network-data {
+ width: 100%;
+ border: 1px solid red;
 }
 
-.network-data canvas {
-  width: 100%;
+canvas {
+  display: inline !important;
+}
+
+[class^="col-"] {
+  float: left;
+  padding: 0 1rem;
+}
+
+.col-1 {
+  width: calc(100% / 2) !important;
+  height: auto !important;
+}
+.col-2 {
+  width: calc(100% / 2 * 2) !important;
 }
 
 @include mobile-landscape {
