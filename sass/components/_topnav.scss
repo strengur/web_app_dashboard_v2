@@ -73,7 +73,8 @@
   padding-left: 10px;
 }
 
-.profile img {
+.profile img,
+.user-profile-img img {
   border-radius: 50%;
   height: 30px;
   width: auto;
@@ -105,7 +106,8 @@
     padding: 0px 10px 0px;
   }
 
-  .profile img {
+  .profile img,
+  .user-profile-img img {
     height: 40px;
   }
 }

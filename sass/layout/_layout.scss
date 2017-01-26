@@ -132,43 +132,96 @@
   width: calc(100% / 6 * 6) !important;
 }
 
+.users-list p,
+.activity-list p {
+  margin: 21px 0 21px 10px;
+  color: $darkGray;
+}
+
 .users-and-activity-lists {
   position: relative;
   display: inline-flex;
   width: 100%;
   padding: 0 10px;
+  border-top: 1px solid #e3e3e3;
 }
 
 .users-and-activity-lists ul {
   list-style: none;
-  padding-right: 25%;
-  border-top: 2px solid #e3e3e3;
-  border-right: 2px solid #e3e3e3;
+  padding-right: 5%;
 }
+
+.users-and-activity-lists li {
+  position: relative;
+  margin-bottom: 21px;
+}
+
 
 .users-and-activity-lists ul li {
   border-bottom: 1px solid #e3e3e3;
-  padding-bottom: 7px;
+  padding-bottom: 21px;
+}
+
+.users-list {
+  border-right: 1px solid #e3e3e3;
 }
 
 .user-profile-img {
-  border-radius: 50%;
   position: absolute;
-  
+  margin-top: -4px;
 }
 
-.users-and-activity-lists h4 {
+.user-info {
+    /* position: relative; */
+  margin-left: 46px;
+}
+
+.user-info p {
+  margin: 0;
+}
+
+.registration-date,
+.right-arrow {
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+
+.registration-date p {
+  font-size: 0.75em;
+  color: $lightGray;
+}
+
+span.registration-name,
+span.last-activity {
   margin-bottom: 0;
+  font-size: 0.8em;
+}
+
+span.last-activity {
+  font-style: italic;
 }
 
 .users-and-activity-lists a {
   text-decoration: none;
-  font-size: 0.90em;
+  font-size: 0.7em;
+}
+
+.users-and-activity-lists a:hover {
+  cursor: pointer;
 }
 
 .users-list,
 .activity-list {
+}
 
+.right-arrow svg {
+  height: 20px;
+  width: auto;
+}
+
+.right-arrow svg:hover {
+  cursor: pointer;
 }
 
 @include mobile-landscape {
