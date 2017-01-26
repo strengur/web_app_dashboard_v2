@@ -7,6 +7,9 @@ body {
 p {
   color: #fff; }
 
+h1, h2, h3, h4 {
+  color: #555555; }
+
 .st0:hover {
   transition: 0.7s; }
 
@@ -60,7 +63,6 @@ p {
 
 .alert-bar {
   position: relative;
-  top: 20px;
   width: 85vw;
   background: #7477BF;
   border-radius: 3px;
@@ -88,22 +90,63 @@ p {
   cursor: pointer; }
 
 .network-data {
-  width: 100%;
-  border: 1px solid red; }
+  max-width: calc(100% - 10px);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; }
 
-canvas {
-  display: inline !important; }
+#daily-traffic {
+  margin-left: -5px; }
 
 [class^="col-"] {
   float: left;
   padding: 0 1rem; }
 
 .col-1 {
-  width: calc(100% / 2) !important;
+  width: calc(100% / 6) !important;
   height: auto !important; }
 
 .col-2 {
-  width: calc(100% / 2 * 2) !important; }
+  width: calc(100% / 6 * 6) !important; }
+
+.col-3 {
+  width: calc(100% / 6 * 6) !important; }
+
+.col-4 {
+  width: calc(100% / 6 * 6) !important; }
+
+.col-5 {
+  width: calc(100% / 6 * 5) !important; }
+
+.col-6 {
+  width: calc(100% / 6 * 6) !important; }
+
+.users-and-activity-lists {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  padding: 0 10px; }
+
+.users-and-activity-lists ul {
+  list-style: none;
+  padding-right: 25%;
+  border-top: 2px solid #e3e3e3;
+  border-right: 2px solid #e3e3e3; }
+
+.users-and-activity-lists ul li {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 7px; }
+
+.user-profile-img {
+  border-radius: 50%;
+  position: absolute; }
+
+.users-and-activity-lists h4 {
+  margin-bottom: 0; }
+
+.users-and-activity-lists a {
+  text-decoration: none;
+  font-size: 0.90em; }
 
 @media screen and (min-width: 640px) {
   #wrapper {
@@ -127,8 +170,14 @@ canvas {
     padding: 13px;
     font-size: 1em; }
 
-  .alert-bar {
-    top: 100px; } }
+  .network-data {
+    display: inline-flex; }
+
+  .col-2 {
+    width: calc(100% / 6 * 2) !important; }
+
+  .col-4 {
+    width: calc(100% / 6 * 4) !important; } }
 #topnav {
   position: absolute;
   top: 0;

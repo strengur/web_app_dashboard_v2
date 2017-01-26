@@ -10,6 +10,10 @@ p {
   color: #fff;
 }
 
+h1, h2, h3, h4 {
+  color: $midGray;
+}
+
 // Transition, in and out.
 .st0:hover {
   transition: 0.7s;

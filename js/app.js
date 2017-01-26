@@ -8,27 +8,26 @@ $closeAlert.addEventListener('click', function() {
   $('.new-alert').fadeOut();
 });
 
-
 var $webTrafficChart = new Chart($webTraffic, {
     type: 'line',
     data: {
-      labels: ["16-22", "23-29", "30-36", "37-43", "44-50", "51-57", "58-64"],
+      labels: ["", "16-22", "23-29", "30-36", "37-43", "44-50", "51-57", "58-64"],
       datasets: [{
         //label: 'Web Traffic',
         fill: true,
         lineTension: 0,
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderColor: "rgba(75,192,192,1)",
-        pointBorderColor: "rgba(75,192,192,1)",
+        backgroundColor: "rgba(77,79,127,0.4)",
+        borderColor: "rgba(77,79,127,1)",
+        pointBorderColor: "rgba(77,79,127,1)",
         pointBackgroundColor: "#fff",
         pointBorderWidth: 2,
         pointHoverRadius: 10,
-        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+        pointHoverBackgroundColor: "rgba(77,79,127,1)",
         pointHoverBorderColor: "rgba(220,220,220,1)",
         pointHoverBorderWidth: 2,
         pointRadius: 5,
         pointHitRadius: 5,
-        data: [1003, 344, 2458, 2524, 1647, 2633, 488]
+        data: [0, 1003, 1344, 2458, 2524, 1647, 2633, 1488]
       }]
     },
     options: {
@@ -36,17 +35,16 @@ var $webTrafficChart = new Chart($webTraffic, {
       legend: {
         display: false
       },
-      layout: {
-        padding: 30
-      },
       title: {
         display: true,
-        text: 'Custom Chart Title'
+        text: 'Web Traffic',
+        fontSize: 18,
+        fontStyle: 'normal'
       },
       scales: {
         xAxes: [{
           gridLines: {
-            offsetGridLines: true
+            offsetGridLines: false
           },
           display: true,
           ticks: {
@@ -55,7 +53,7 @@ var $webTrafficChart = new Chart($webTraffic, {
         }],
         yAxes: [{
           gridLines: {
-            offsetGridLines: true
+            offsetGridLines: false
           },
           ticks: {
             beginAtZero: true,
@@ -69,36 +67,36 @@ var $webTrafficChart = new Chart($webTraffic, {
 var $dailyTrafficChart = new Chart($dailyTraffic, {
   type: 'bar',
   data: {
-    labels: ['Monday', 'Thuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     datasets: [
       {
         label: "Daily Traffic",
         backgroundColor: [
-          'rgba(252, 64, 23, 0.4)',
-          'rgba(25, 164, 123, 0.4)',
-          'rgba(12, 4, 223, 0.4)',
-          'rgba(22, 224, 243, 0.4)',
-          'rgba(111, 33, 189, 0.4)',
-          'rgba(252, 64, 87, 0.4)',
-          'rgba(1, 76, 23, 0.4)'
+          'rgba(191,176,116,0.4)',
+          'rgba(191,176,116,0.4)',
+          'rgba(191,176,116,0.4)',
+          'rgba(191,176,116,0.4)',
+          'rgba(191,176,116,0.4)',
+          'rgba(191,176,116,0.4)',
+          'rgba(191,176,116,0.4)'
         ],
         borderColor: [
-          'rgba(252, 64, 23, 1)',
-          'rgba(25, 164, 123, 1)',
-          'rgba(12, 4, 223, 1)',
-          'rgba(22, 224, 243, 1)',
-          'rgba(111, 33, 189, 1)',
-          'rgba(252, 64, 87, 1)',
-          'rgba(1, 76, 23, 1)'
+          'rgba(191,176,116,1)',
+          'rgba(191,176,116,1)',
+          'rgba(191,176,116,1)',
+          'rgba(191,176,116,1)',
+          'rgba(191,176,116,1)',
+          'rgba(191,176,116,1)',
+          'rgba(191,176,116,1)'
         ],
         hoverBackgroundColor: [
-          'rgba(252, 64, 23, 0.6)',
-          'rgba(25, 164, 123, 0.6)',
-          'rgba(12, 4, 223, 0.6)',
-          'rgba(22, 224, 243, 0.6)',
-          'rgba(111, 33, 189, 0.6)',
-          'rgba(252, 64, 87, 0.6)',
-          'rgba(1, 76, 23, 0.6)'
+          'rgba(191,176,116,0.6)',
+          'rgba(191,176,116,0.6)',
+          'rgba(191,176,116,0.6)',
+          'rgba(191,176,116,0.6)',
+          'rgba(191,176,116,0.6)',
+          'rgba(191,176,116,0.6)',
+          'rgba(191,176,116,0.6)'
         ],
         borderWidth: 2,
         data: [226, 283, 234, 237, 223, 254, 264]
@@ -107,13 +105,32 @@ var $dailyTrafficChart = new Chart($dailyTraffic, {
   },
   options: {
     responsive: true,
+    maintainAspectRatio: true,
     layout: {
       padding: 30
     },
+    legend: {
+      display: false
+    },
+    title: {
+      display: true,
+      text: 'Daily Traffic',
+      fontSize: 18,
+      fontStyle: 'normal'
+    },
+    yAxes: [{
+      gridLines: {
+        offsetGridLines: false
+      },
+      ticks: {
+        stepSize: 5
+      }
+    }]
   }
 });
 
 var $mobileUsersChart = new Chart($mobileUsers, {
+
   type: 'pie',
   data: {
     labels: [
@@ -123,11 +140,16 @@ var $mobileUsersChart = new Chart($mobileUsers, {
     ],
     datasets: [
       {
-        data: [457, 542, 384],
+        data: [157, 542, 384],
         backgroundColor: [
-          '#2f45f3',
-          '#ff53cd',
-          '#cd8dc8'
+          'rgba(77,79,127,0.7)',
+          'rgba(202,161,143,0.7)',
+          'rgba(91,140,71,0.7)'
+        ],
+        hoverBackgroundColor: [
+          'rgba(77,79,127,1)',
+          'rgba(202,161,143,1)',
+          'rgba(91,140,71,1)'
         ]
       }
     ]
@@ -135,8 +157,25 @@ var $mobileUsersChart = new Chart($mobileUsers, {
   options: {
     responsive: true,
     cutoutPercentage: 50,
+    rotation: -0.2 * Math.PI,
     layout: {
-      padding: 30
+      padding: 0
+    },
+
+    title: {
+      display: true,
+      text: 'Mobile Users',
+      fontSize: 18,
+      fontStyle: 'normal'
+    },
+
+    legend: {
+      position: 'right',
+      fullWidth: true,
+      labels: {
+        boxWidth: 20,
+        fontSize: 16
+      }
     }
   }
 });
