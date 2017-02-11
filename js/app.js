@@ -16,7 +16,7 @@ var $webTrafficChart = new Chart($webTraffic, {
         //label: 'Web Traffic',
         fill: true,
         lineTension: 0,
-        backgroundColor: "rgba(77,79,127,0.4)",
+        backgroundColor: "rgba(77,79,127,0.6)",
         borderColor: "rgba(77,79,127,1)",
         pointBorderColor: "rgba(77,79,127,1)",
         pointBackgroundColor: "#fff",
@@ -72,31 +72,31 @@ var $dailyTrafficChart = new Chart($dailyTraffic, {
       {
         label: "Daily Traffic",
         backgroundColor: [
-          'rgba(191,176,116,0.4)',
-          'rgba(191,176,116,0.4)',
-          'rgba(191,176,116,0.4)',
-          'rgba(191,176,116,0.4)',
-          'rgba(191,176,116,0.4)',
-          'rgba(191,176,116,0.4)',
-          'rgba(191,176,116,0.4)'
+          'rgba(77,79,127,0.6)',
+          'rgba(77,79,127,0.6)',
+          'rgba(77,79,127,0.6)',
+          'rgba(77,79,127,0.6)',
+          'rgba(77,79,127,0.6)',
+          'rgba(77,79,127,0.6)',
+          'rgba(77,79,127,0.6)'
         ],
         borderColor: [
-          'rgba(191,176,116,1)',
-          'rgba(191,176,116,1)',
-          'rgba(191,176,116,1)',
-          'rgba(191,176,116,1)',
-          'rgba(191,176,116,1)',
-          'rgba(191,176,116,1)',
-          'rgba(191,176,116,1)'
+          'rgba(77,79,127,1)',
+          'rgba(77,79,127,1)',
+          'rgba(77,79,127,1)',
+          'rgba(77,79,127,1)',
+          'rgba(77,79,127,1)',
+          'rgba(77,79,127,1)',
+          'rgba(77,79,127,1)'
         ],
         hoverBackgroundColor: [
-          'rgba(191,176,116,0.6)',
-          'rgba(191,176,116,0.6)',
-          'rgba(191,176,116,0.6)',
-          'rgba(191,176,116,0.6)',
-          'rgba(191,176,116,0.6)',
-          'rgba(191,176,116,0.6)',
-          'rgba(191,176,116,0.6)'
+          'rgba(77,79,127,0.8)',
+          'rgba(77,79,127,0.8)',
+          'rgba(77,79,127,0.8)',
+          'rgba(77,79,127,0.8)',
+          'rgba(77,79,127,0.8)',
+          'rgba(77,79,127,0.8)',
+          'rgba(77,79,127,0.8)'
         ],
         borderWidth: 2,
         data: [226, 283, 234, 237, 223, 254, 264]
@@ -142,14 +142,14 @@ var $mobileUsersChart = new Chart($mobileUsers, {
       {
         data: [157, 542, 384],
         backgroundColor: [
-          'rgba(77,79,127,0.7)',
-          'rgba(202,161,143,0.7)',
-          'rgba(91,140,71,0.7)'
+          'rgba(77,79,127,0.6)',
+          'rgba(39,40,63,0.6)',
+          'rgba(124,127,204,0.6)'
         ],
         hoverBackgroundColor: [
-          'rgba(77,79,127,1)',
-          'rgba(202,161,143,1)',
-          'rgba(91,140,71,1)'
+          'rgba(77,79,127,0.8)',
+          'rgba(39,40,63,0.8)',
+          'rgba(124,127,204,0.8)'
         ]
       }
     ]
