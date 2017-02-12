@@ -144,6 +144,7 @@
   width: 100%;
   padding: 0 10px;
   border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
 }
 
 .users-and-activity-lists ul {
@@ -160,6 +161,10 @@
 .users-and-activity-lists ul li {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 21px;
+}
+
+.users-and-activity-lists ul li:last-of-type {
+    border: 0;
 }
 
 .users-list {
@@ -211,6 +216,10 @@ span.last-activity {
   cursor: pointer;
 }
 
+.activity-list {
+  padding-left: 10px;
+}
+
 .users-list,
 .activity-list {
 }
@@ -222,6 +231,10 @@ span.last-activity {
 
 .right-arrow svg:hover {
   cursor: pointer;
+}
+
+.messages-and-settings {
+  padding-bottom: 60px;
 }
 
 @include mobile-landscape {

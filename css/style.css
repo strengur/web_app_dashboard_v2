@@ -131,7 +131,8 @@ h1, h2, h3, h4 {
   display: inline-flex;
   width: 100%;
   padding: 0 10px;
-  border-top: 1px solid #e3e3e3; }
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3; }
 
 .users-and-activity-lists ul {
   list-style: none;
@@ -144,6 +145,9 @@ h1, h2, h3, h4 {
 .users-and-activity-lists ul li {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 21px; }
+
+.users-and-activity-lists ul li:last-of-type {
+  border: 0; }
 
 .users-list {
   border-right: 1px solid #e3e3e3; }
@@ -184,12 +188,18 @@ span.last-activity {
 .users-and-activity-lists a:hover {
   cursor: pointer; }
 
+.activity-list {
+  padding-left: 10px; }
+
 .right-arrow svg {
   height: 20px;
   width: auto; }
 
 .right-arrow svg:hover {
   cursor: pointer; }
+
+.messages-and-settings {
+  padding-bottom: 60px; }
 
 @media screen and (min-width: 640px) {
   #wrapper {
