@@ -435,7 +435,38 @@ button#send {
   }
 }
 
-//iOS switch tweak
+//iOS swithc tweak, hourly, daily, monthly, yearly
+.switch-ios.switch-toggle {
+  width: 50%;
+  right: 0;
+  font-size: 0.85em;
+  background-color: transparent;
+  box-shadow: inset transparent 0 0px 0;
+  position: relative;
+  float: right;
+  margin: 20px 0;
+}
+
+.switch-ios input:checked + label {
+    color: #fff;
+}
+
+.switch-toggle.switch-ios label,
+.switch-toggle.switch-ios input,
+.switch-toggle.switch-ios label:focus,
+.switch-toggle.switch-ios input:focus,
+.switch-toggle.switch-ios label:active,
+.switch-toggle.switch-ios input:active {
+    outline: none;
+    border: none;
+}
+
+.switch-toggle.switch-ios label:hover,
+.switch-ios.switch-light input:hover {
+  cursor: pointer;
+}
+
+//iOS switch tweak, on and off switches
 .switch-ios.switch-light input:checked ~ span {
   border-color: #7477bf;
   box-shadow: inset 0 0 0 30px #7477bf;
