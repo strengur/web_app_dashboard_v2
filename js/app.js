@@ -1,14 +1,34 @@
-var $closeAlert = document.getElementById('alert-bar-close');
-var $webTraffic = document.getElementById('web-traffic').getContext('2d');
-var $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
-var $mobileUsers = document.getElementById('mobile-users').getContext('2d');
+const $closeAlert = document.getElementById('alert-bar-close');
+const $searchField = document.getElementById('name');
+const $userNames = document.querySelectorAll('.registration-name');
+const $webTraffic = document.getElementById('web-traffic').getContext('2d');
+const $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
+const $mobileUsers = document.getElementById('mobile-users').getContext('2d');
 
 $closeAlert.addEventListener('click', function() {
   $(this).parent().fadeOut();
   $('.new-alert').fadeOut();
 });
 
-var $webTrafficChart = new Chart($webTraffic, {
+//Search function
+function searchUser($typedSearch) {
+  let $searchString = $typedSearch.toLowerCase();
+  if($userNames[0].innerText.toLowerCase().includes($searchString)) {
+    $userNames[0].innerHTML = 'Inner HTML: ', $typedSearch;
+    console.log('Search function lower: ', $userNames[0].innerText);
+  }
+}
+
+let $typedSearch;
+$searchField.addEventListener('keyup', function() {
+  $typedSearch = this.value;
+  searchUser($typedSearch);
+});
+//Loop through each user name
+
+//Check if input matches username and then remove no match
+
+const $webTrafficChart = new Chart($webTraffic, {
     type: 'line',
     data: {
       labels: ["", "16-22", "23-29", "30-36", "37-43", "44-50", "51-57", "58-64"],
@@ -64,7 +84,7 @@ var $webTrafficChart = new Chart($webTraffic, {
     }
 });
 
-var $dailyTrafficChart = new Chart($dailyTraffic, {
+const $dailyTrafficChart = new Chart($dailyTraffic, {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -129,7 +149,7 @@ var $dailyTrafficChart = new Chart($dailyTraffic, {
   }
 });
 
-var $mobileUsersChart = new Chart($mobileUsers, {
+const $mobileUsersChart = new Chart($mobileUsers, {
 
   type: 'pie',
   data: {
