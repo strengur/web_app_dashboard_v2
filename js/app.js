@@ -1,6 +1,6 @@
 const $closeAlert = document.getElementById('alert-bar-close');
-const $searchField = document.getElementById('name');
 const $userNames = document.querySelectorAll('.registration-name');
+
 const $webTraffic = document.getElementById('web-traffic').getContext('2d');
 const $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
 const $mobileUsers = document.getElementById('mobile-users').getContext('2d');
@@ -11,19 +11,51 @@ $closeAlert.addEventListener('click', function() {
 });
 
 //Search function
-function searchUser($typedSearch) {
-  let $searchString = $typedSearch.toLowerCase();
-  if($userNames[0].innerText.toLowerCase().includes($searchString)) {
-    $userNames[0].innerHTML = 'Inner HTML: ', $typedSearch;
-    console.log('Search function lower: ', $userNames[0].innerText);
+const $searchField = $('#name');
+function isSearchPresent() {
+  return $searchField.val().length <= 0;
+}
+
+
+function searchUser() {
+    let $usersArray = [];
+    let $searchString = $searchField.val().toLowerCase();
+    if(!isSearchPresent()) {
+    for (let i=0; i < $userNames.length; ++i) {
+      if($userNames[i].innerText.toLowerCase().includes($searchString)) { //&& !$userNames[i].innerText.replace(/\s/g,"") == "") {
+        $usersArray.push($userNames[i].innerText);
+        console.log('innihald array: ', $usersArray);
+        console.log('Fjöldi í array: ', $usersArray.length);
+      }
+    }
+    $('.search-suggestions ul').empty();
+    if($usersArray.length > 0) {
+      console.log('Fjöldi í suggest array: ', $usersArray.length);
+      for (let i = 0; i < $usersArray.length; ++i) {
+        $('.search-suggestions ul').append('<li><p>', + $usersArray[i], '</p></li>');
+        console.log('Notendur: ', $usersArray[i]);
+      }
+      // $('.search-suggestions ul').append('<li>', $usersArray[i], '</li>');
+      // console.log('Notendur: ', $usersArray[i]);
+
+    }
+    // while($usersArray.length > 0) {
+    //   $usersArray.pop();
+    //   console.log('While innihald array: ', $usersArray);
+    // }
+  } else {
+    $('.search-suggestions ul').empty();
   }
 }
 
 let $typedSearch;
-$searchField.addEventListener('keyup', function() {
-  $typedSearch = this.value;
-  searchUser($typedSearch);
-});
+$searchField.keyup(searchUser);
+// $searchField.addEventListener('keyup', function() {
+//   $typedSearch = this.value;
+//   if(isSearchPresent()) {
+//     searchUser($typedSearch);
+//   }
+// });
 //Loop through each user name
 
 //Check if input matches username and then remove no match

@@ -177,6 +177,7 @@ h1, h2, h3, h4 {
   color: #d0d0d0; }
 
 span.registration-name,
+span.activity-user,
 span.last-activity {
   margin-bottom: 0;
   font-size: 0.8em; }
@@ -238,6 +239,18 @@ button#send {
   display: inline-flex;
   width: 100%;
   justify-content: space-between; }
+
+.search-suggestions {
+  position: absolute;
+  margin-top: 102px;
+  border: 1px solid #e3e3e3;
+  padding: 15px;
+  border-radius: 5px;
+  background: #f1f2f9; }
+
+.search-suggestions ul {
+  list-style: none;
+  padding: 0px; }
 
 @media screen and (min-width: 640px) {
   #wrapper {
