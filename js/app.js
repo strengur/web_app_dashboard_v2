@@ -1,5 +1,6 @@
 const $closeAlert = document.getElementById('alert-bar-close');
 const $userNames = document.querySelectorAll('.registration-name');
+const $nameField = document.getElementById('name');
 //const $searchSuggestionItem = document.getElementById('search-suggestion');
 const $webTraffic = document.getElementById('web-traffic').getContext('2d');
 const $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
@@ -45,7 +46,9 @@ $searchField.keyup(searchUser);
   // Get value of clicked p and add it to variable
   // let $clickedItemTxt = $(this).value();
   $('.search-suggestions').on('click', 'li', function() {
-    console.log($(this).text());
+    let $nameSelection = $(this).text();
+    $nameField.value = $nameSelection;
+    $('.search-suggestions ul').empty();
   });
 
 
