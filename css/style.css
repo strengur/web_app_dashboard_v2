@@ -20,7 +20,8 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 100px;
   width: 100%;
-  min-height: calc(100vh); }
+  min-height: calc(100vh);
+  z-index: 0; }
 
 .search-bar {
   height: 29px;
@@ -240,16 +241,37 @@ button#send {
   width: 100%;
   justify-content: space-between; }
 
+.alert-messages {
+  position: absolute;
+  display: block;
+  top: 70px;
+  right: 145px;
+  font-size: 0.7em; }
+
+.alert-messages p,
+.alert-messages h4 {
+  color: #fff; }
+
+.alert-messages h4 {
+  margin: 0px; }
+
 .search-suggestions {
   position: absolute;
   margin-top: 102px; }
 
-.search-suggestions-framing {
+.search-suggestions-framing,
+.alert-messages {
   border: 1px solid #555555;
-  border-radius: 5px;
+  border-radius: 5px; }
+
+.search-suggestions-framing {
   background: #f1f2f9; }
 
-.search-suggestions ul {
+.alert-messages {
+  background: #7477BF; }
+
+.search-suggestions ul,
+.alert-messages ul {
   list-style: none;
   padding: 0px; }
 
@@ -260,13 +282,32 @@ button#send {
   cursor: pointer; }
 
 .search-suggestions ul,
-.search-suggestions p {
+.search-suggestions p,
+.alert-messages ul,
+.alert-messages p {
   margin: 0px; }
+
+.alert-messages li {
+  padding: 10px;
+  border-bottom: 1px solid #a1a1a1;
+  transition: 0.3s;
+  color: #fff; }
+
+.alert-messages li:last-child {
+  border-bottom: 0px; }
+
+.alert-messages li:hover {
+  background: #4D4F7F;
+  color: #fff;
+  transition: 0.5s; }
 
 .search-suggestions p:hover {
   background: #7477BF;
   color: #fff;
   transition: 0.5s; }
+
+.alert-messages-off {
+  display: none; }
 
 @media screen and (min-width: 640px) {
   #wrapper {

@@ -3,6 +3,7 @@
   top: 100px;
   width: 100%;
   min-height: calc(100vh);
+  z-index: 0;
 }
 
 .search-bar {
@@ -282,18 +283,44 @@ button#send {
   justify-content: space-between;
 }
 
+.alert-messages {
+  position: absolute;
+  display: block;
+  top: 70px;
+  right: 145px;
+  font-size: 0.7em;
+}
+
+.alert-messages p,
+.alert-messages h4 {
+  color: #fff;
+}
+
+.alert-messages h4 {
+  margin: 0px;
+}
+
 .search-suggestions {
   position: absolute;
   margin-top: 102px;
 }
 
-.search-suggestions-framing {
+.search-suggestions-framing,
+.alert-messages {
   border: 1px solid $midGray;
   border-radius: 5px;
+}
+
+.search-suggestions-framing {
   background: #f1f2f9;
 }
 
-.search-suggestions ul {
+.alert-messages {
+  background: $lighterPurple;
+}
+
+.search-suggestions ul,
+.alert-messages ul {
   list-style: none;
   padding: 0px;
 }
@@ -306,14 +333,37 @@ button#send {
 }
 
 .search-suggestions ul,
-.search-suggestions p {
+.search-suggestions p,
+.alert-messages ul,
+.alert-messages p {
   margin: 0px;
+}
+
+.alert-messages li {
+  padding: 10px;
+  border-bottom: 1px solid #a1a1a1;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.alert-messages li:last-child {
+  border-bottom: 0px;
+}
+
+.alert-messages li:hover {
+  background: $darkerPurple;
+  color: #fff;
+  transition: 0.5s;
 }
 
 .search-suggestions p:hover {
   background: $lighterPurple;
   color: #fff;
   transition: 0.5s;
+}
+
+.alert-messages-off {
+  display: none;
 }
 
 @include mobile-landscape {

@@ -16,8 +16,24 @@
           <p><span>Your</span><span>App</span></p>
         </div>
 
+        <div class="alert-messages-off alert-messages">
+          <ul>
+            <li>
+              <h4>Chart error</h4>
+              <p>Some errors has occured in various charts.</p>
+            </li>
+            <li>
+              <h4>New message</h4>
+              <p>Dan Oliver has sent you a message.</p>
+            </li>
+            <li>
+              <h4>New release</h4>
+              <p>We have updated our webpage with mutch better user experience.</p>
+            </li>
+        </div>
+
         <div class="user-login">
-          <div class="alert login-flex-item">
+          <div id="alert-bell" class="alert login-flex-item">
             <div class="bell">
               <img src="icons/icon-bell.svg" alt="">
             </div>
@@ -189,6 +205,26 @@
             <h3>2,530</h3>
           </div>
         </div>
+
+        <div id="linkedin" class="col-2">
+          <div class="social-icon-background">
+            <img src="icons/icon-facebook.svg" alt="">
+          </div>
+          <div>
+            <p>LinkedIn</p>
+            <h3>2,792</h3>
+          </div>
+        </div>
+
+        <div id="instagram" class="col-2">
+          <div class="social-icon-background">
+            <img src="icons/icon-google-plus.svg" alt="">
+          </div>
+          <div>
+            <p>Instagram</p>
+            <h3>7,440</h3>
+          </div>
+        </div>
       </div>
 
       <div class="users-and-activity-lists">
@@ -354,21 +390,23 @@
       </div>
       <div class="messages-and-settings">
         <div class="message-form col-3 flex-item">
-          <div id="search-suggestion" class="search-suggestions">
-            <ul>
+          <!-- <form action="#" method="post"> -->
+            <div id="search-suggestion" class="search-suggestions">
+              <ul>
 
-            </ul>
-          </div>
-          <h4>Message User</h4>
-          <div>
-            <input type="text" id="name" name="user_name" autocomplete="off" placeholder="Search for user" required>
-          </div>
-          <div>
-            <textarea id="message" name="message"></textarea>
-          </div>
-          <div>
-            <button id="send" type="submit">Send</button>
-          </div>
+              </ul>
+            </div>
+            <h4>Message User</h4>
+            <div>
+              <input type="text" id="name" name="user_name" autocomplete="off" placeholder="Search for user" required>
+            </div>
+            <div>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <div>
+              <button id="send" type="submit">Send</button>
+            </div>
+          <!-- </form> -->
         </div>
 
         <div class="settings col-3 flex-item">

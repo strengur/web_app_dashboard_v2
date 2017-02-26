@@ -1,9 +1,19 @@
+const $alertBell = document.getElementById('alert-bell')
 const $closeAlert = document.getElementById('alert-bar-close');
 const $userNames = document.querySelectorAll('.registration-name');
 const $nameField = document.getElementById('name');
+const $messageField = document.getElementById('message');
+const $sendButton = document.getElementById('send');
 const $webTraffic = document.getElementById('web-traffic').getContext('2d');
 const $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
 const $mobileUsers = document.getElementById('mobile-users').getContext('2d');
+
+
+$alertBell.addEventListener('click', function() {
+  $('.alert-messages').fadeToggle('alert-messages-off');
+  $('.new-alert').fadeOut();
+  $('#alert-bar-close').parent().fadeOut();
+});
 
 $closeAlert.addEventListener('click', function() {
   $(this).parent().fadeOut();
@@ -44,10 +54,27 @@ $('.search-suggestions').on('click', 'li', function() {
   let $nameSelection = $(this).text();
   $nameField.value = $nameSelection;
   $('.search-suggestions ul').empty();
+  $('.search-suggestions').removeClass('search-suggestions-framing');
 });
 
 $('#name').on('focus', function() {
   $(this).select();
+});
+
+$sendButton.addEventListener('click', function() {
+  let $reciever = $nameField.value;
+  let $message = $messageField.value;
+  let $errorMessage = "This field must contain username!"
+  if($reciever === "" || $message === "") {
+    if($reciever === "") {
+      $nameField.value = $errorMessage;
+    }
+    if($message === "") {
+      $messageField.value = $errorMessage;
+    }
+  } else {
+    alert("Thank you. The message has been successfully sent to " + $reciever + "!")
+  }
 });
 
 const $webTrafficChart = new Chart($webTraffic, {
@@ -178,20 +205,26 @@ const $mobileUsersChart = new Chart($mobileUsers, {
     labels: [
       'Mobile',
       'Desktop',
-      'Tablet'
+      'Tablet',
+      'TV',
+      'Car dashboard'
     ],
     datasets: [
       {
-        data: [157, 542, 384],
+        data: [157, 542, 384, 249, 63],
         backgroundColor: [
           'rgba(77,79,127,0.6)',
           'rgba(39,40,63,0.6)',
-          'rgba(124,127,204,0.6)'
+          'rgba(124,127,204,0.6)',
+          'rgba(39,140,163,0.6)',
+          'rgba(124,227,104,0.6)'
         ],
         hoverBackgroundColor: [
           'rgba(77,79,127,0.8)',
           'rgba(39,40,63,0.8)',
-          'rgba(124,127,204,0.8)'
+          'rgba(124,127,204,0.8)',
+          'rgba(39,140,163,0.8)',
+          'rgba(124,227,104,0.8)'
         ]
       }
     ]
