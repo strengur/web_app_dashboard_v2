@@ -285,15 +285,35 @@ button#send {
 .search-suggestions {
   position: absolute;
   margin-top: 102px;
-  border: 1px solid #e3e3e3;
-  padding: 15px;
+}
+
+.search-suggestions-framing {
+  border: 1px solid $midGray;
   border-radius: 5px;
   background: #f1f2f9;
 }
 
 .search-suggestions ul {
-    list-style: none;
-    padding: 0px;
+  list-style: none;
+  padding: 0px;
+}
+
+.search-suggestions p {
+  padding: 7px 15px;
+  color: $midGray;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.search-suggestions ul,
+.search-suggestions p {
+  margin: 0px;
+}
+
+.search-suggestions p:hover {
+  background: $lighterPurple;
+  color: #fff;
+  transition: 0.5s;
 }
 
 @include mobile-landscape {

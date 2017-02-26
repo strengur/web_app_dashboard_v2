@@ -1,6 +1,6 @@
 const $closeAlert = document.getElementById('alert-bar-close');
 const $userNames = document.querySelectorAll('.registration-name');
-
+const $searchSuggestionItem = $('#searchSuggestionItem p');
 const $webTraffic = document.getElementById('web-traffic').getContext('2d');
 const $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
 const $mobileUsers = document.getElementById('mobile-users').getContext('2d');
@@ -10,12 +10,11 @@ $closeAlert.addEventListener('click', function() {
   $('.new-alert').fadeOut();
 });
 
-//Search function
+// Message live Search function
 const $searchField = $('#name');
 function isSearchPresent() {
   return $searchField.val().length <= 0;
 }
-
 
 function searchUser() {
     let $usersArray = [];
@@ -24,41 +23,38 @@ function searchUser() {
     for (let i=0; i < $userNames.length; ++i) {
       if($userNames[i].innerText.toLowerCase().includes($searchString)) { //&& !$userNames[i].innerText.replace(/\s/g,"") == "") {
         $usersArray.push($userNames[i].innerText);
-        console.log('innihald array: ', $usersArray);
-        console.log('Fjöldi í array: ', $usersArray.length);
       }
     }
+    $('.search-suggestions').addClass('search-suggestions-framing');
     $('.search-suggestions ul').empty();
     if($usersArray.length > 0) {
-      console.log('Fjöldi í suggest array: ', $usersArray.length);
       for (let i = 0; i < $usersArray.length; ++i) {
-        $('.search-suggestions ul').append('<li><p>', + $usersArray[i], '</p></li>');
-        console.log('Notendur: ', $usersArray[i]);
+        $('.search-suggestions ul').append('<li><p>' + $usersArray[i] + '</p></li>');
       }
-      // $('.search-suggestions ul').append('<li>', $usersArray[i], '</li>');
-      // console.log('Notendur: ', $usersArray[i]);
-
     }
-    // while($usersArray.length > 0) {
-    //   $usersArray.pop();
-    //   console.log('While innihald array: ', $usersArray);
-    // }
   } else {
     $('.search-suggestions ul').empty();
+    $('.search-suggestions').removeClass('search-suggestions-framing');
   }
 }
 
-let $typedSearch;
 $searchField.keyup(searchUser);
-// $searchField.addEventListener('keyup', function() {
-//   $typedSearch = this.value;
-//   if(isSearchPresent()) {
-//     searchUser($typedSearch);
-//   }
-// });
-//Loop through each user name
 
-//Check if input matches username and then remove no match
+// Click on p
+
+  // Get value of clicked p and add it to variable
+  // let $clickedItemTxt = $(this).value();
+  $searchSuggestionItem.click(function() {
+    console.log('dddd');
+  });
+
+// Get value of clicked p and add it to variable
+// Update search field with clicked value
+// Remove search suggestion
+//$('.search-suggestions ul').empty();
+
+
+
 
 const $webTrafficChart = new Chart($webTraffic, {
     type: 'line',
