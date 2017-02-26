@@ -169,6 +169,38 @@ const $dailyTrafficChart = new Chart($dailyTraffic, {
         ],
         borderWidth: 2,
         data: [226, 283, 234, 237, 223, 254, 264]
+      },
+      {
+        label: "Daily Traffic",
+        backgroundColor: [
+          'rgba(177,79,127,0.6)',
+          'rgba(177,79,127,0.6)',
+          'rgba(177,79,127,0.6)',
+          'rgba(177,79,127,0.6)',
+          'rgba(177,79,127,0.6)',
+          'rgba(177,79,127,0.6)',
+          'rgba(177,79,127,0.6)'
+        ],
+        borderColor: [
+          'rgba(177,79,127,1)',
+          'rgba(177,79,127,1)',
+          'rgba(177,79,127,1)',
+          'rgba(177,79,127,1)',
+          'rgba(177,79,127,1)',
+          'rgba(177,79,127,1)',
+          'rgba(177,79,127,1)'
+        ],
+        hoverBackgroundColor: [
+          'rgba(177,79,127,0.8)',
+          'rgba(177,79,127,0.8)',
+          'rgba(177,79,127,0.8)',
+          'rgba(177,79,127,0.8)',
+          'rgba(177,79,127,0.8)',
+          'rgba(177,79,127,0.8)',
+          'rgba(177,79,127,0.8)'
+        ],
+        borderWidth: 2,
+        data: [326, 273, 294, 137, 384, 154, 184]
       }
     ]
   },
@@ -211,7 +243,7 @@ const $mobileUsersChart = new Chart($mobileUsers, {
     ],
     datasets: [
       {
-        data: [157, 542, 384, 249, 63],
+        data: [157, 542, 384, 249, 64],
         backgroundColor: [
           'rgba(77,79,127,0.6)',
           'rgba(39,40,63,0.6)',
