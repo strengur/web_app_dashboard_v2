@@ -77,7 +77,61 @@ $sendButton.addEventListener('click', function() {
   }
 });
 
-const $webTrafficChart = new Chart($webTraffic, {
+// BEGIN: Chart update (hourly, daily, weekly, montly)
+function updateChart(i,y) {
+  let x = $webTrafficData[i];
+  console.log("UpdateChart function begin ", i, "and ", x);
+  $webTrafficChart.data.datasets[0].data[i] = Math.random() * y;
+	$webTrafficChart.update()
+  console.log("UpdateChart function end ", i, "and ", x);
+}
+
+$('#hour3').click(function() {
+  $webTrafficChart.data.datasets[0].data = [0, 100, 344, 258, 254, 164, 233, 488];
+  $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = 250;
+  $webTrafficChart.update();
+  console.log("Hourly", $webTrafficData);
+});
+
+$('#day3').click(function() {
+  let i = 0;
+  let y = 10000;
+  let $chartLength = $webTrafficChart.data.labels.length;
+  $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = y / 10;
+  do {
+    $webTrafficChart.data.datasets[0].data[0] = 0;
+    i++;
+    updateChart(i,y);
+  } while (i < $chartLength)
+});
+
+$('#week3').click(function() {
+  let i = 0;
+  let y = 100000;
+  let $chartLength = $webTrafficChart.data.labels.length;
+  $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = y / 10;
+  do {
+    $webTrafficChart.data.datasets[0].data[0] = 0;
+    i++;
+    updateChart(i,y);
+  } while (i < $chartLength)
+});
+
+$('#month3').click(function() {
+  let i = 0;
+  let y = 1000000;
+  let $chartLength = $webTrafficChart.data.labels.length;
+  $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = y / 10;
+  do {
+    $webTrafficChart.data.datasets[0].data[0] = 0;
+    i++;
+    updateChart(i,y);
+  } while (i < $chartLength)
+});
+// END: Chart update (hourly, daily, weekly, montly)
+
+let $webTrafficData = [0, 100, 344, 258, 254, 164, 233, 488];
+let $webTrafficChart = new Chart($webTraffic, {
     type: 'line',
     data: {
       labels: ["", "16-22", "23-29", "30-36", "37-43", "44-50", "51-57", "58-64"],
@@ -96,7 +150,7 @@ const $webTrafficChart = new Chart($webTraffic, {
         pointHoverBorderWidth: 2,
         pointRadius: 5,
         pointHitRadius: 5,
-        data: [0, 1003, 1344, 2458, 2524, 1647, 2633, 1488]
+        data: $webTrafficData
       }]
     },
     options: {
@@ -126,14 +180,14 @@ const $webTrafficChart = new Chart($webTraffic, {
           },
           ticks: {
             beginAtZero: true,
-            stepSize: 500
+            stepSize: 250
           }
         }]
       }
     }
 });
 
-const $dailyTrafficChart = new Chart($dailyTraffic, {
+let $dailyTrafficChart = new Chart($dailyTraffic, {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -230,7 +284,7 @@ const $dailyTrafficChart = new Chart($dailyTraffic, {
   }
 });
 
-const $mobileUsersChart = new Chart($mobileUsers, {
+let $mobileUsersChart = new Chart($mobileUsers, {
 
   type: 'pie',
   data: {
