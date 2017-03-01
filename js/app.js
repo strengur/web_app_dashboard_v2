@@ -80,17 +80,14 @@ $sendButton.addEventListener('click', function() {
 // BEGIN: Chart update (hourly, daily, weekly, montly)
 function updateChart(i,y) {
   let x = $webTrafficData[i];
-  console.log("UpdateChart function begin ", i, "and ", x);
   $webTrafficChart.data.datasets[0].data[i] = Math.random() * y;
 	$webTrafficChart.update()
-  console.log("UpdateChart function end ", i, "and ", x);
 }
 
 $('#hour3').click(function() {
   $webTrafficChart.data.datasets[0].data = [0, 100, 344, 258, 254, 164, 233, 488];
   $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = 250;
   $webTrafficChart.update();
-  console.log("Hourly", $webTrafficData);
 });
 
 $('#day3').click(function() {
