@@ -127,6 +127,17 @@ $('#month3').click(function() {
 });
 // END: Chart update (hourly, daily, weekly, montly)
 
+// BEGIN: Saving settings for the page in local storage
+  // When page is loaded it needs to check if local storage is present
+    // If local storage is present, make adjustments to the settings.
+
+  // When clicked on Save button settings needs to be stored in a local storage
+    // Collect information about the email, profile and timezone to use for stored settings
+      // Update/create local storage with collected information
+    // Display message for successful saving of settings
+
+// END: Saving settings for the page in local storage
+
 let $webTrafficData = [0, 100, 344, 258, 254, 164, 233, 488];
 let $webTrafficChart = new Chart($webTraffic, {
     type: 'line',
