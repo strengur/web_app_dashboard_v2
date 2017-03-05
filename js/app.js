@@ -138,12 +138,18 @@ $('#month3').click(function() {
 
 $(document).ready(function() {
   let $updateEmailSettings = localStorage.sendEmailNotification;
+  console.log($updateEmailSettings);
   let $updateProfileSettings = localStorage.setProfileToPublic;
   let $updateTimeZone = localStorage.timeZone;
-  $emailSettings.checked = $updateEmailSettings;
-  $profileSettings.checked = $updateProfileSettings;
-  $timeZoneSettings.selectedOptions[0].index = $updateTimeZone;
+  if($updateEmailSettings !== $emailSettings.checked) {
+    $emailSettings.checked = $updateEmailSettings;
+    console.log('Email settings is same');
+  } else {
+    console.log('Email setting is not same');
+  }
 
+  //$profileSettings.checked = $updateProfileSettings;
+  $timeZoneSettings[$updateTimeZone].selected = true;
 });
 
 
@@ -164,7 +170,7 @@ $saveButton.addEventListener('click', function() {
     localStorage.setItem('timeZone', $timeZoneIndex);
     localStorage.setItem('locationPath', $locationPath);
     // Display message for successful saving of settings.
-    alert('Settings has beeb saved!')
+    alert('Settings has been saved!')
   }
 });
 
