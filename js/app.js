@@ -125,18 +125,52 @@ $('#month3').click(function() {
     updateChart(i,y);
   } while (i < $chartLength)
 });
-// END: Chart update (hourly, daily, weekly, montly)
+// END: Chart update (hourly, daily, weekly, montly).
 
-// BEGIN: Saving settings for the page in local storage
-  // When page is loaded it needs to check if local storage is present
+// BEGIN: Saving settings for the page in local storage.
+  // When page is loaded it needs to check if local storage is present.
     // If local storage is present, make adjustments to the settings.
+    const $emailSettings = document.getElementById('email-settings');
+    const $profileSettings = document.getElementById('profile-settings');
+    const $timeZoneSettings = document.getElementById('timezone');
 
-  // When clicked on Save button settings needs to be stored in a local storage
-    // Collect information about the email, profile and timezone to use for stored settings
-      // Update/create local storage with collected information
-    // Display message for successful saving of settings
+    const $saveButton = document.getElementById('save');
 
-// END: Saving settings for the page in local storage
+$(document).ready(function() {
+  let $updateEmailSettings = localStorage.sendEmailNotification;
+  let $updateProfileSettings = localStorage.setProfileToPublic;
+  let $updateTimeZone = localStorage.timeZone;
+  $emailSettings.checked = $updateEmailSettings;
+  $profileSettings.checked = $updateProfileSettings;
+  $timeZoneSettings.selectedOptions[0].index = $updateTimeZone;
+
+});
+
+
+// When clicked on Save button settings needs to be stored in a local storage.
+// Save selected settings to local storage.
+$saveButton.addEventListener('click', function() {
+  // Check if localstorage is enabled.
+  if(window.localStorage) {
+  // If local storage is present, add these settings to local storage.
+    // Collect information about the email, profile and timezone to use for stored settings.
+    let $emailStatus = $emailSettings.checked;
+    let $profileStatus = $profileSettings.checked;
+    let $timeZoneIndex = $timeZoneSettings.selectedOptions[0].index;
+    let $locationPath = window.location.pathname;
+    // Update/create local storage with collected information.
+    localStorage.setItem('sendEmailNotification', $emailStatus);
+    localStorage.setItem('setProfileToPublic', $profileStatus);
+    localStorage.setItem('timeZone', $timeZoneIndex);
+    localStorage.setItem('locationPath', $locationPath);
+    // Display message for successful saving of settings.
+    alert('Settings has beeb saved!')
+  }
+});
+
+
+
+// END: Saving settings for the page in local storage.
 
 let $webTrafficData = [0, 100, 344, 258, 254, 164, 233, 488];
 let $webTrafficChart = new Chart($webTraffic, {
