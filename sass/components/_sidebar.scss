@@ -20,6 +20,10 @@
   width: 20px;
 }
 
+.sidebar-content li:hover {
+  cursor: pointer;
+}
+
 .st0 {
   fill: $lightGray !important;
 }
@@ -46,10 +50,6 @@
 
 .sidebar-content li:first-of-type {
   border-bottom: 3px solid #85DB9D;
-  // border-right: 3px transparent;
-  // border-top: 3px transparent;
-  // border-bottom: 3px transparent;
-  // border-style: ridge;
 }
 
 @include mobile-landscape {

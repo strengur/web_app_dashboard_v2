@@ -15,7 +15,7 @@
 .search-field-area {
   position: absolute;
   top: 4px;
-  right: 4px;
+  right: 24px;
 }
 
 .search-field-area input {
@@ -28,10 +28,22 @@
 
 .search-field-area button {
   position: absolute;
-  background: transparent;
-  border: 0;
-  right: 15px;
-  top: 0;
+  background: $lighterPurple;
+  border: 1px solid $darkerPurple;
+  border-radius: 3px;
+  right: -18px;
+  top: 1px;
+  height: 19px;
+  width: 19px;
+  padding: 0px;
+}
+
+.search-field-area button img {
+  position: relative;
+  height: 12px;
+  width: 12px;
+  top: 1px;
+  margin-left: 0px;
 }
 
 .tabs {
@@ -88,8 +100,7 @@
 .network-data {
   max-width: calc(100% - 10px);
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
 }
 
 .data-item {
@@ -142,6 +153,7 @@
 .users-and-activity-lists {
   position: relative;
   display: inline-flex;
+  flex-wrap: wrap;
   width: 100%;
   padding: 0 10px;
   border-top: 1px solid #e3e3e3;
@@ -171,8 +183,8 @@
 
 .users-list,
 .message-form {
-  border-right: 1px solid #e3e3e3;
-  padding-left: 10px;
+  border-right: 0px;
+  padding-left: 0px;
 }
 
 .user-profile-img {
@@ -222,7 +234,7 @@ span.last-activity {
 }
 
 .activity-list {
-  padding-left: 10px;
+  padding-left: 0px;
 }
 
 .users-list,
@@ -230,8 +242,10 @@ span.last-activity {
 }
 
 .right-arrow svg {
+  position: relative;
   height: 20px;
   width: auto;
+  right: -16px;
 }
 
 .right-arrow svg:hover {
@@ -242,6 +256,7 @@ span.last-activity {
   width: 100%;
   padding-bottom: 60px;
   display: inline-flex;
+  flex-wrap: wrap;
 }
 
 select#timezone {
@@ -366,6 +381,122 @@ button#send {
   display: none;
 }
 
+.social-stats {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.social-stats p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.social-stats h3 {
+  margin: 0;
+  font-size: 2em;
+  color: #fff;
+}
+
+.social-stats p,
+.social-stats h3 {
+  font-weight: 100;
+}
+
+.social-stats,
+#twitter,
+#facebook,
+#google-plus,
+#linkedin,
+#instagram {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.social-stats img {
+  height: 28px;
+}
+
+#twitter,
+#facebook,
+#google-plus,
+#linkedin,
+#instagram {
+  position: relative;
+  flex: 1 240px;
+  margin: 10px;
+  padding: 10px;
+  background: rgba(77,79,127,0.6);
+  border-radius: 5px;
+  border: 2px solid rgba(77,79,127,1);
+  transition: 0.5s;
+}
+
+#twitter:hover,
+#facebook:hover,
+#google-plus:hover,
+#linkedin:hover,
+#instagram:hover {
+  background: rgba(77,79,127,0.8);
+  transition: 0.7s;
+}
+
+#twitter img,
+#facebook img,
+#google-plus img,
+#linkedin img,
+#instagram img {
+  align-self: center;
+}
+
+#twitter,
+#facebook,
+#google-plus,
+#linkedin,
+#instagram,
+button#send,
+button#save,
+button#cancel,
+input,
+textarea {
+  border-radius: 5px;
+}
+
+.social-icon-background  {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(77,79,127,1);
+  padding: 0px;
+  height: 50px;
+  width: 50px;
+}
+
+input, textarea, select {
+  border: 1px solid #e3e3e3;
+  background: rgba(116, 119, 191, 0.1);
+}
+
+.message-form,
+.settings {
+  padding: 22px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+input, textarea {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 110px;
+}
+
+select {
+  margin-bottom: 15px;
+}
+
 @include mobile-landscape {
   #wrapper {
     top: 70px;
@@ -379,13 +510,27 @@ button#send {
 
   .search-field-area {
     top: 8px;
-    right: 15px;
+    right: 45px;
   }
 
   .search-field-area input {
     padding: 4px;
     font-weight: 100;
     font-size: 1em;
+  }
+
+  .search-field-area button {
+    right: -27px;
+    height: 28px;
+    width: 28px;
+    padding: 0px;
+  }
+
+  .search-field-area button img {
+    height: 16px;
+    width: 16px;
+    top: 2px;
+    margin-left: 0px;
   }
 
   .tabs li {
@@ -396,150 +541,32 @@ button#send {
   #daily-traffic {
     border-right: 2px solid $lightGray;
   }
-
-  .network-data {
-    display: inline-flex;
-  }
+  //
+  // .network-data {
+  //   display: inline-flex;
+  // }
 
   .network-data,
   .data-item {
     border-bottom: 2px solid $lightGray;
   }
 
-  .social-stats {
-    padding: 20px 0;
-    width: 100%;
-  }
 
-  .social-stats p {
-    font-size: 0.9em;
-    margin: 0;
-  }
-
-  .social-stats h3 {
-    margin: 0;
-    font-size: 2em;
-    color: #fff;
-  }
-
-  .social-stats p,
-  .social-stats h3 {
-    font-weight: 100;
-  }
-
-  .social-stats,
-  #twitter,
-  #facebook,
-  #google-plus,
-  #linkedin,
-  #instagram {
-    display: inline-flex;
-    justify-content: space-around;
-  }
-
-  .social-stats img {
-    height: 28px;
-  }
-
-  #twitter,
-  #facebook,
-  #google-plus,
-  #linkedin,
-  #instagram {
-    position: relative;
-    flex: 0 240px;
-    margin: 30px;
-    padding: 10px;
-    background: rgba(77,79,127,0.6);
-    border-radius: 5px;
-    border: 2px solid rgba(77,79,127,1);
-    transition: 0.5s;
-  }
-
-  #twitter:hover,
-  #facebook:hover,
-  #google-plus:hover,
-  #linkedin:hover,
-  #instagram:hover {
-    background: rgba(77,79,127,0.8);
-    transition: 0.7s;
-  }
-
-  #twitter img,
-  #facebook img,
-  #google-plus img,
-  #linkedin img,
-  #instagram img {
-    align-self: center;
-  }
-
-  #twitter,
-  #facebook,
-  #google-plus,
-  #linkedin,
-  #instagram,
-  button#send,
-  button#save,
-  button#cancel,
-  input,
-  textarea {
-    border-radius: 5px;
-  }
-
-  .social-icon-background  {
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(77,79,127,1);
-    padding: 0px;
-    height: 50px;
-    width: 50px;
+  #twitter, #facebook, #google-plus, #linkedin, #instagram {
+    flex: 1 287px;
   }
 
 
-  .col-2 {
-    width: calc(100% / 6 * 2) !important;
-  }
-
-  .col-4 {
-    width: calc(100% / 6 * 4) !important;
-  }
-
-  .message-form,
-  .settings {
-    padding: 22px;
-  }
-
-  input, textarea, select {
-    border: 1px solid #e3e3e3;
-    background: rgba(116, 119, 191, 0.1);
-  }
-
-  input, textarea {
-    padding: 10px;
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  textarea {
-    height: 110px;
-  }
-
-  select {
-    margin-bottom: 15px;
-  }
 }
 
 //iOS switch tweak, hourly, daily, monthly, yearly
 .switch-ios.switch-toggle {
-  width: 50%;
-  right: 0;
-  font-size: 0.85em;
+  width: 100%;
+  font-size: 0.65em;
   background-color: transparent;
   box-shadow: inset transparent 0 0px 0;
   position: relative;
-  float: right;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .switch-ios input:checked + label {
@@ -596,4 +623,68 @@ label.switch-light.switch-ios span:first-of-type {
   font-size: 0.85em;
   padding: 4px 0;
   color: #fff;
+}
+
+@include tablets {
+  .search-field-area button {
+    top: 0px;
+  }
+  .network-data {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  .col-2 {
+    width: calc(100% / 6 * 2) !important;
+  }
+
+  .col-4 {
+    width: calc(100% / 6 * 4) !important;
+  }
+
+  #twitter,
+  #facebook,
+  #google-plus,
+  #linkedin,
+  #instagram {
+    flex: 0 240px;
+    margin: 30px;
+    padding: 10px;
+  }
+
+  .switch-ios.switch-toggle {
+    width: 50%;
+    right: 0;
+    font-size: 0.85em;
+    float: right;
+    margin: 20px 0;
+  }
+
+  .users-and-activity-lists {
+    flex-wrap: nowrap;
+  }
+
+  .activity-list {
+    padding-left: 10px;
+  }
+
+  .users-list,
+  .message-form {
+    border-right: 1px solid #e3e3e3;
+    padding-left: 10px;
+  }
+
+  .right-arrow svg {
+    right: 0px;
+  }
+
+  .messages-and-settings {
+    flex-wrap: nowrap;
+  }
+
+  .message-form,
+  .settings {
+    padding: 22px;
+    border-bottom: 0px;
+  }
 }

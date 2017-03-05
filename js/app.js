@@ -1,18 +1,18 @@
-const $alertBell = document.getElementById('alert-bell')
-const $closeAlert = document.getElementById('alert-bar-close');
-const $userNames = document.querySelectorAll('.registration-name');
-const $nameField = document.getElementById('name');
-const $messageField = document.getElementById('message');
-const $sendButton = document.getElementById('send');
-const $webTraffic = document.getElementById('web-traffic').getContext('2d');
-const $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
-const $mobileUsers = document.getElementById('mobile-users').getContext('2d');
+var $alertBell = document.getElementById('alert-bell');
+var $closeAlert = document.getElementById('alert-bar-close');
+var $userNames = document.querySelectorAll('.registration-name');
+var $nameField = document.getElementById('name');
+var $messageField = document.getElementById('message');
+var $sendButton = document.getElementById('send');
+var $webTraffic = document.getElementById('web-traffic').getContext('2d');
+var $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
+var $mobileUsers = document.getElementById('mobile-users').getContext('2d');
 
-const $emailSettings = document.getElementById('email-settings');
-const $profileSettings = document.getElementById('profile-settings');
-const $timeZoneSettings = document.getElementById('timezone');
+var $emailSettings = document.getElementById('email-settings');
+var $profileSettings = document.getElementById('profile-settings');
+var $timeZoneSettings = document.getElementById('timezone');
 
-const $saveButton = document.getElementById('save');
+var $saveButton = document.getElementById('save');
 
 $alertBell.addEventListener('click', function() {
   $('.alert-messages').fadeToggle('alert-messages-off');
@@ -26,16 +26,16 @@ $closeAlert.addEventListener('click', function() {
 });
 
 // Message live Search function
-const $searchField = $('#name');
+var $searchField = $('#name');
 function isSearchPresent() {
   return $searchField.val().length <= 0;
 }
 
 function searchUser() {
-    let $usersArray = [];
-    let $searchString = $searchField.val().toLowerCase();
+    var $usersArray = [];
+    var $searchString = $searchField.val().toLowerCase();
     if(!isSearchPresent()) {
-    for (let i=0; i < $userNames.length; ++i) {
+    for (var i=0; i < $userNames.length; ++i) {
       if($userNames[i].innerText.toLowerCase().includes($searchString)) { //&& !$userNames[i].innerText.replace(/\s/g,"") == "") {
         $usersArray.push($userNames[i].innerText);
       }
@@ -43,8 +43,8 @@ function searchUser() {
     $('.search-suggestions').addClass('search-suggestions-framing');
     $('.search-suggestions ul').empty();
     if($usersArray.length > 0) {
-      for (let i = 0; i < $usersArray.length; ++i) {
-        $('.search-suggestions ul').append('<li><p>' + $usersArray[i] + '</p></li>');
+      for (var x = 0; x < $usersArray.length; ++x) {
+        $('.search-suggestions ul').append('<li><p>' + $usersArray[x] + '</p></li>');
       }
     }
   } else {
@@ -56,7 +56,7 @@ function searchUser() {
 $searchField.keyup(searchUser);
 
 $('.search-suggestions').on('click', 'li', function() {
-  let $nameSelection = $(this).text();
+  var $nameSelection = $(this).text();
   $nameField.value = $nameSelection;
   $('.search-suggestions ul').empty();
   $('.search-suggestions').removeClass('search-suggestions-framing');
@@ -67,9 +67,9 @@ $('#name').on('focus', function() {
 });
 
 $sendButton.addEventListener('click', function() {
-  let $reciever = $nameField.value;
-  let $message = $messageField.value;
-  let $errorMessage = "This field must contain username!"
+  var $reciever = $nameField.value;
+  var $message = $messageField.value;
+  var $errorMessage = "This field can't be empty!";
   if($reciever === "" || $message === "") {
     if($reciever === "") {
       $nameField.value = $errorMessage;
@@ -78,15 +78,14 @@ $sendButton.addEventListener('click', function() {
       $messageField.value = $errorMessage;
     }
   } else {
-    alert("Thank you. The message has been successfully sent to " + $reciever + "!")
+    alert("Thank you. The message has been successfully sent to " + $reciever + "!");
   }
 });
 
 // BEGIN: Chart update (hourly, daily, weekly, montly)
 function updateChart(i,y) {
-  let x = $webTrafficData[i];
   $webTrafficChart.data.datasets[0].data[i] = Math.random() * y;
-	$webTrafficChart.update()
+	$webTrafficChart.update();
 }
 
 $('#hour3').click(function() {
@@ -96,39 +95,39 @@ $('#hour3').click(function() {
 });
 
 $('#day3').click(function() {
-  let i = 0;
-  let y = 10000;
-  let $chartLength = $webTrafficChart.data.labels.length;
+  var i = 0;
+  var y = 10000;
+  var $chartLength = $webTrafficChart.data.labels.length;
   $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = y / 10;
   do {
     $webTrafficChart.data.datasets[0].data[0] = 0;
     i++;
     updateChart(i,y);
-  } while (i < $chartLength)
+  } while (i < $chartLength);
 });
 
 $('#week3').click(function() {
-  let i = 0;
-  let y = 100000;
-  let $chartLength = $webTrafficChart.data.labels.length;
+  var i = 0;
+  var y = 100000;
+  var $chartLength = $webTrafficChart.data.labels.length;
   $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = y / 10;
   do {
     $webTrafficChart.data.datasets[0].data[0] = 0;
     i++;
     updateChart(i,y);
-  } while (i < $chartLength)
+  } while (i < $chartLength);
 });
 
 $('#month3').click(function() {
-  let i = 0;
-  let y = 1000000;
-  let $chartLength = $webTrafficChart.data.labels.length;
+  var i = 0;
+  var y = 1000000;
+  var $chartLength = $webTrafficChart.data.labels.length;
   $webTrafficChart.options.scales.yAxes[0].ticks.stepSize = y / 10;
   do {
     $webTrafficChart.data.datasets[0].data[0] = 0;
     i++;
     updateChart(i,y);
-  } while (i < $chartLength)
+  } while (i < $chartLength);
 });
 // END: Chart update (hourly, daily, weekly, montly).
 
@@ -138,9 +137,9 @@ $(document).ready(function() {
   // Check if one of stored settings are present to avoid error in JS console.
   if (localStorage.sendEmailNotification || localStorage.setProfileToPublic || localStorage.timeZone) {
     // If local storage is present, make adjustments to the settings.
-    let $updateEmailSettings = JSON.parse(localStorage.sendEmailNotification);
-    let $updateProfileSettings = JSON.parse(localStorage.setProfileToPublic);
-    let $updateTimeZone = localStorage.timeZone;
+    var $updateEmailSettings = JSON.parse(localStorage.sendEmailNotification);
+    var $updateProfileSettings = JSON.parse(localStorage.setProfileToPublic);
+    var $updateTimeZone = localStorage.timeZone;
     $emailSettings.checked = $updateEmailSettings;
     $profileSettings.checked = $updateProfileSettings;
     $timeZoneSettings[$updateTimeZone].selected = true;
@@ -155,25 +154,25 @@ $saveButton.addEventListener('click', function() {
   if(window.localStorage) {
   // If local storage is present, add these settings to local storage.
     // Collect information about the email, profile and timezone to use for stored settings.
-    let $emailStatus = $emailSettings.checked;
-    let $profileStatus = $profileSettings.checked;
-    let $timeZoneIndex = $timeZoneSettings.selectedOptions[0].index;
-    let $locationPath = window.location.pathname;
+    var $emailStatus = $emailSettings.checked;
+    var $profileStatus = $profileSettings.checked;
+    var $timeZoneIndex = $timeZoneSettings.selectedOptions[0].index;
+    var $locationPath = window.location.pathname;
     // Update/create local storage with collected information.
     localStorage.setItem('sendEmailNotification', $emailStatus);
     localStorage.setItem('setProfileToPublic', $profileStatus);
     localStorage.setItem('timeZone', $timeZoneIndex);
     localStorage.setItem('locationPath', $locationPath);
     // Display message for successful saving of settings.
-    alert('Settings has been saved!')
+    alert('Settings has been saved!');
   }
 });
 // END: Saving settings for the page in local storage.
 
 // BEGIN: Charts
 
-let $webTrafficData = [0, 100, 344, 258, 254, 164, 233, 488];
-let $webTrafficChart = new Chart($webTraffic, {
+var $webTrafficData = [0, 100, 344, 258, 254, 164, 233, 488];
+var $webTrafficChart = new Chart($webTraffic, {
     type: 'line',
     data: {
       labels: ["", "16-22", "23-29", "30-36", "37-43", "44-50", "51-57", "58-64"],
@@ -229,7 +228,7 @@ let $webTrafficChart = new Chart($webTraffic, {
     }
 });
 
-let $dailyTrafficChart = new Chart($dailyTraffic, {
+var $dailyTrafficChart = new Chart($dailyTraffic, {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -326,7 +325,7 @@ let $dailyTrafficChart = new Chart($dailyTraffic, {
   }
 });
 
-let $mobileUsersChart = new Chart($mobileUsers, {
+var $mobileUsersChart = new Chart($mobileUsers, {
 
   type: 'pie',
   data: {
