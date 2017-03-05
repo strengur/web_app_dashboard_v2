@@ -8,6 +8,11 @@ const $webTraffic = document.getElementById('web-traffic').getContext('2d');
 const $dailyTraffic = document.getElementById('daily-traffic').getContext('2d');
 const $mobileUsers = document.getElementById('mobile-users').getContext('2d');
 
+const $emailSettings = document.getElementById('email-settings');
+const $profileSettings = document.getElementById('profile-settings');
+const $timeZoneSettings = document.getElementById('timezone');
+
+const $saveButton = document.getElementById('save');
 
 $alertBell.addEventListener('click', function() {
   $('.alert-messages').fadeToggle('alert-messages-off');
@@ -128,28 +133,18 @@ $('#month3').click(function() {
 // END: Chart update (hourly, daily, weekly, montly).
 
 // BEGIN: Saving settings for the page in local storage.
-  // When page is loaded it needs to check if local storage is present.
-    // If local storage is present, make adjustments to the settings.
-    const $emailSettings = document.getElementById('email-settings');
-    const $profileSettings = document.getElementById('profile-settings');
-    const $timeZoneSettings = document.getElementById('timezone');
-
-    const $saveButton = document.getElementById('save');
-
+// When page is loaded it needs to check if local storage is present.
 $(document).ready(function() {
-  let $updateEmailSettings = localStorage.sendEmailNotification;
-  console.log($updateEmailSettings);
-  let $updateProfileSettings = localStorage.setProfileToPublic;
-  let $updateTimeZone = localStorage.timeZone;
-  if($updateEmailSettings !== $emailSettings.checked) {
+  // Check if one of stored settings are present to avoid error in JS console.
+  if (localStorage.sendEmailNotification || localStorage.setProfileToPublic || localStorage.timeZone) {
+    // If local storage is present, make adjustments to the settings.
+    let $updateEmailSettings = JSON.parse(localStorage.sendEmailNotification);
+    let $updateProfileSettings = JSON.parse(localStorage.setProfileToPublic);
+    let $updateTimeZone = localStorage.timeZone;
     $emailSettings.checked = $updateEmailSettings;
-    console.log('Email settings is same');
-  } else {
-    console.log('Email setting is not same');
+    $profileSettings.checked = $updateProfileSettings;
+    $timeZoneSettings[$updateTimeZone].selected = true;
   }
-
-  //$profileSettings.checked = $updateProfileSettings;
-  $timeZoneSettings[$updateTimeZone].selected = true;
 });
 
 
@@ -173,10 +168,9 @@ $saveButton.addEventListener('click', function() {
     alert('Settings has been saved!')
   }
 });
-
-
-
 // END: Saving settings for the page in local storage.
+
+// BEGIN: Charts
 
 let $webTrafficData = [0, 100, 344, 258, 254, 164, 233, 488];
 let $webTrafficChart = new Chart($webTraffic, {
@@ -388,3 +382,5 @@ let $mobileUsersChart = new Chart($mobileUsers, {
     }
   }
 });
+
+// END: Charts
