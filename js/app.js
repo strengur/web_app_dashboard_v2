@@ -69,15 +69,21 @@ $('#name').on('focus', function() {
 $sendButton.addEventListener('click', function() {
   var $reciever = $nameField.value;
   var $message = $messageField.value;
-  var $errorMessage = "This field can't be empty!";
+  var $errorMessage = "* This field can't be empty!";
   if($reciever === "" || $message === "") {
     if($reciever === "") {
-      $nameField.value = $errorMessage;
+      document.getElementById('user-error-message').innerHTML = $errorMessage;
+    } else {
+      document.getElementById('user-error-message').innerHTML = "";
     }
     if($message === "") {
-      $messageField.value = $errorMessage;
+      document.getElementById('message-error-message').innerHTML = $errorMessage;
+    } else {
+      document.getElementById('message-error-message').innerHTML = "";
     }
   } else {
+    document.getElementById('user-error-message').innerHTML = "";
+    document.getElementById('message-error-message').innerHTML = "";
     alert("Thank you. The message has been successfully sent to " + $reciever + "!");
   }
 });

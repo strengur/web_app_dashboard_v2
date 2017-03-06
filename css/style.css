@@ -210,6 +210,11 @@ span.last-activity {
 .activity-list {
   padding-left: 0px; }
 
+.activity-icon svg {
+  width: 15px;
+  height: auto;
+  position: absolute; }
+
 .right-arrow svg {
   position: relative;
   height: 20px;
@@ -309,6 +314,20 @@ button#send {
   border-bottom: 1px solid #a1a1a1;
   transition: 0.3s;
   color: #fff; }
+
+#user-error-message,
+#message-error-message {
+  /* border: 2px solid #da2128; */
+  /* border-radius: 4px; */
+  /* padding: 5px 0px; */
+  font-size: 0.8em;
+  /* background: rgba(218, 33, 40, 0.15); */
+  color: #da2128;
+  position: relative;
+  /* width: 50%; */
+  text-align: center;
+  float: right;
+  top: -14px; }
 
 .alert-messages li:last-child {
   border-bottom: 0px; }
@@ -567,9 +586,7 @@ label.switch-light.switch-ios span:first-of-type {
     right: 0px; }
 
   .activity-icon svg {
-    width: 15px;
-    height: auto;
-    position: absolute;
+    width: 17px;
     top: -10px; }
 
   .messages-and-settings {
