@@ -678,6 +678,13 @@ label.switch-light.switch-ios span:first-of-type {
     right: 0px;
   }
 
+  .activity-icon svg {
+    width: 15px;
+    height: auto;
+    position: absolute;
+    top: -10px;
+  }
+
   .messages-and-settings {
     flex-wrap: nowrap;
   }
