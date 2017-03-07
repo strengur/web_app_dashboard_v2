@@ -489,7 +489,7 @@ select {
   #twitter, #facebook, #google-plus, #linkedin, #instagram {
     flex: 1 287px; } }
 .switch-ios.switch-toggle {
-  width: 100%;
+  width: 90%;
   font-size: 0.65em;
   background-color: transparent;
   box-shadow: inset transparent 0 0px 0;
